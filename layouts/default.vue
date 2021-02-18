@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <ui-header/>
-    <Nuxt/>
-    <ui-footer/>
+  <div class="ui-layout">
+    <ui-header />
+    <Nuxt />
+    <ui-footer />
   </div>
 </template>
 <script>
@@ -24,7 +24,7 @@ html {
     'Helvetica Neue',
     Arial,
     sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -32,6 +32,18 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   background-color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
 }
 
 *,

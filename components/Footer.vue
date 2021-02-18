@@ -12,21 +12,23 @@
 </template>
 
 <style lang="scss">
-  .ui-footer {
-    padding: 50px 30px 30px;
-    text-align: center;
-    .info {
-      margin-top: 50px;
-      font-size: 13px;
-      line-height: 1.8;
-      color: #8f9195;
-      a {
-        color: #202020;
-        text-decoration: none;
-        &:hover {
-          color: #ffa737;
-        }
+.ui-footer {
+  padding: 3.1rem 1.9rem 1.9rem;
+  text-align: center;
+  background-color: #f7f8f9;
+  border-top: 1px solid #e8eaf0;
+  .info {
+    margin-top: 3.1rem;
+    font-size: .8rem;
+    line-height: 1.8;
+    color: #8f9195;
+    a {
+      color: #202020;
+      text-decoration: none;
+      &:hover {
+        color: #ffa737;
       }
     }
   }
+}
 </style>
