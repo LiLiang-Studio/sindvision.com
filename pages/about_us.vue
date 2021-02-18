@@ -42,6 +42,9 @@ export default {
     return {
       title: '关于我们'
     }
+  },
+  head () {
+    return { title: this.title }
   }
 }
 </script>
