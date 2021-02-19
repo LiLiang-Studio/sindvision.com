@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style lang="scss">
-html {
+html, input, textarea {
   font-family:
     'Source Sans Pro',
     -apple-system,
@@ -32,6 +32,7 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   background-color: #fff;
+  color: #202020;
 }
 
 @media screen and (max-width: 1024px) {
