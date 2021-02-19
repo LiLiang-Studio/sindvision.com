@@ -92,7 +92,7 @@
 
 <style lang="scss">
 .ui-header {
-  padding: 0 1rem;
+  padding: 0 $contentPadding;
   background-color: rgba(10, 10, 10, .5);
   position: fixed;
   top: 0;
@@ -108,7 +108,7 @@
     display: block;
   }
   .nav {
-    max-width: 1200px;
+    max-width: $contentWidth;
     padding: 1.25rem 0;
     margin: 0 auto;
     display: flex;
@@ -142,18 +142,9 @@
     }
   }
   .button {
-    display: inline-block;
+    @include gradBtn;
     padding: .4rem 1.25rem;
     font-size: 12px;
-    border-radius: 1.6rem;
-    color: #785510;
-    background: #e8cb90;
-    background-image: linear-gradient(to top, #d6ad5a, #e8cb90);
-    transition: all .2s;
-    &:hover {
-      background: #d6ad5a;
-      background-image: linear-gradient(to top, #e8cb90, #d6ad5a);
-    }
   }
   .submenu {
     background-color: #fff;

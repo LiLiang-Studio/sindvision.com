@@ -1,0 +1,14 @@
+$contentWidth: 1200px;
+$contentPadding: 1rem;
+@mixin gradBtn {
+  display: inline-block;
+  border-radius: 2rem;
+  color: #785510;
+  background: #e8cb90;
+  background-image: linear-gradient(to top, #d6ad5a, #e8cb90);
+  transition: all .2s;
+  &:hover {
+    background: #d6ad5a;
+    background-image: linear-gradient(to top, #e8cb90, #d6ad5a);
+  }
+}

@@ -25,7 +25,7 @@
             <h3>开始您的免费咨询</h3>
             <p>我们专业的客服人员将在24小时内给您回复。</p>
             <nuxt-link to="/contact">
-              <span class="button">点击联系我们</span>
+              <b class="button">点击联系我们</b>
             </nuxt-link>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default {
   .row-1 {
     padding: 100px 1rem;
     .inner {
-      max-width: 1200px;
+      max-width: $contentWidth;
       margin: 0 auto;
       display: flex;
       .col {
@@ -110,19 +110,9 @@ export default {
         margin: 1em;
       }
       .button {
-        display: inline-block;
-        padding: .7rem 1.7rem;
+        @include gradBtn;
+        padding: .6rem 1.7rem;
         font-size: .9rem;
-        border-radius: 2rem;
-        color: #785510;
-        font-weight: bold;
-        background: #e8cb90;
-        background-image: linear-gradient(to top, #d6ad5a, #e8cb90);
-        transition: all .2s;
-        &:hover {
-          background: #d6ad5a;
-          background-image: linear-gradient(to top, #e8cb90, #d6ad5a);
-        }
       }
     }
   }
