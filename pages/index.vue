@@ -29,6 +29,36 @@
         <img src="/images/agency-seo-desk-front.jpg" alt="">
       </div>
     </div>
+    <div class="row-4">
+      <div class="inner">
+        <div class="summary">
+          <h3 class="title">
+            CCMS系统
+          </h3>
+          <div class="clearfix box">
+            <div class="leftItem">
+              采用先进成熟的技术<br>
+              功能强大涵盖广泛<br>
+              可扩展性强
+            </div>
+            <div class="rightItem">
+              安全可靠<br>
+              提供在线开发集成环境
+            </div>
+          </div>
+        </div>
+        <ul class="list">
+          <li>
+            <h3 class="title">
+              功能全面
+            </h3>
+            <p class="desc">
+              多功能模块，近百种细分项目完全满足系统的需求。
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
     <ui-advisory-card />
   </div>
 </template>
@@ -63,6 +93,12 @@ export default {
         {
           title: '职场/话务员',
           desc: '万众创业下的众包服务<br>快速承接业务的运营能力'
+        }
+      ],
+      row4Data: [
+        {
+          title: '',
+          desc: ''
         }
       ]
     }
@@ -137,6 +173,35 @@ export default {
       img {
         display: block;
         width: 100%;
+      }
+    }
+  }
+  .row-4 {
+    padding: 5rem $contentPadding 3rem;
+    background: url('/images/page_title6-1.jpg') no-repeat center center;
+    background-size: cover;
+    .inner {
+      max-width: $contentWidth;
+      margin: 0 auto;
+      .summary {
+        max-width: 660px;
+        margin: 0 auto 4rem;
+        color: #fff;
+        text-align: center;
+        .title {
+          margin-bottom: 20px;
+          font-size: 2.3rem;
+        }
+        .box {
+          line-height: 1.6;
+          font-size: 1.1rem;
+          .leftItem {
+            float: left;
+          }
+          .rightItem {
+            float: right;
+          }
+        }
       }
     }
   }
