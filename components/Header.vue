@@ -8,44 +8,9 @@
         <li>
           <a href="javascript:;">产品功能 &or;</a>
           <ul class="submenu">
-            <li>
-              <nuxt-link to="/product_features/1">
-                交互式语音(IVR)
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/product_features/2">
-                自动呼叫分配(ACD)
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/product_features/3">
-                智能外呼
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/product_features/4">
-                监听监控
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/product_features/5">
-                统计报表
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/product_features/6">
-                终端电话
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/product_features/7">
-                通话录音(REC)
-              </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/product_features/8">
-                通话防火墙
+            <li v-for="_ in features" :key="_.title">
+              <nuxt-link :to="`/product_features/${_.title}`">
+                {{ _.title }}
               </nuxt-link>
             </li>
           </ul>
@@ -89,6 +54,17 @@
     </nav>
   </header>
 </template>
+
+<script>
+import features from '@/assets/data'
+export default {
+  data () {
+    return {
+      features
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 .ui-header {

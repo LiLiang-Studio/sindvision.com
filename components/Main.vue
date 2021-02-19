@@ -33,11 +33,11 @@ export default {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     .title, .sub-title {
+      color: #fff;
       font-weight: normal;
     }
     .title {

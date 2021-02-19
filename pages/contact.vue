@@ -48,10 +48,12 @@
             </li>
             <li>
               <label>您的留言 (必填)</label>
-              <textarea rows="6"></textarea>
+              <textarea rows="6" />
             </li>
             <li>
-              <button class="btn">发送</button>
+              <button class="btn">
+                发送
+              </button>
             </li>
           </ul>
         </div>
