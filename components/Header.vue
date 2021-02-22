@@ -2,7 +2,7 @@
   <header class="clearfix ui-header">
     <nav class="nav">
       <a href="/" class="logo">
-        <img src="/images/白色-拷贝.png" alt="">
+        <img src="/images/白色-拷贝@2x.png" alt="">
       </a>
       <ul class="menu">
         <li>
@@ -89,6 +89,10 @@ export default {
     margin: 0 auto;
     display: flex;
     align-items: center;
+    .logo img {
+      width: 162px;
+      height: 41px;
+    }
   }
   .menu {
     flex: 1;

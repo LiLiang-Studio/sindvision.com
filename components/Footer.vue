@@ -1,6 +1,6 @@
 <template>
   <footer class="ui-footer">
-    <img height="41" src="/images/彩色-拷贝@2x-200x51.png" alt="">
+    <img height="41" src="/images/彩色-拷贝@2x.png" alt="">
     <p class="info">
       <span>北京盛德远景科技有限公司 © Copyright 2017 - 2021</span>
       <span class="divider">|</span>

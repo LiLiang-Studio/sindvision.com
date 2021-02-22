@@ -44,8 +44,8 @@
         </div>
       </div>
     </div>
-    <div class="swiper-button-next" />
-    <div class="swiper-button-prev" />
+    <div class="fa fa-angle-right swiper-button-next" />
+    <div class="fa fa-angle-left swiper-button-prev" />
   </div>
 </template>
 
@@ -146,8 +146,11 @@ export default {
     }
   }
   @media screen and (max-width: 800px) {
-    .swiper-slide .content {
-      display: none;
+    .swiper-slide {
+      height: 420px;
+      .content {
+        display: none;
+      }
     }
   }
   .swiper-button-next,
@@ -160,7 +163,7 @@ export default {
     background: rgba(0, 0, 0, .5);
     top: 50%;
     transform: translateY(-50%);
-    font-size: 14px;
+    font-size: 20px;
     color: #fff;
   }
   .swiper-button-prev {
@@ -168,16 +171,6 @@ export default {
   }
   .swiper-button-next {
     right: 0;
-  }
-  .swiper-button-next:before,
-  .swiper-button-prev:before {
-    font-family: "upsicons";
-  }
-  .swiper-button-prev:before {
-    content: "\e627";
-  }
-  .swiper-button-next:before {
-    content: "\e629";
   }
 }
 </style>
