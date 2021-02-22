@@ -57,5 +57,8 @@ export default {
     styleResources: {
       scss: './assets/variables.scss'
     }
+  },
+  server: {
+    host: '0.0.0.0'
   }
 }

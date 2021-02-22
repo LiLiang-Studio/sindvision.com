@@ -1,6 +1,7 @@
 /* eslint-disable vue/no-v-html */
 <template>
   <div class="page-index">
+    <ui-banner />
     <div class="row-1">
       <div class="inner">
         <h3 class="title">
@@ -90,9 +91,10 @@
 </template>
 
 <script>
+import UiBanner from '@/components/home/Banner.vue'
 import UiAdvisoryCard from '@/components/AdvisoryCard.vue'
 export default {
-  components: { UiAdvisoryCard },
+  components: { UiBanner, UiAdvisoryCard },
   data () {
     return {
       row2Data: [
@@ -162,6 +164,21 @@ export default {
         }
       ]
     }
+  },
+  head: {
+    script: [
+      { src: '/libs/swiper/swiper.min.js' }
+    ],
+    link: [
+      {
+        rel: 'stylesheet',
+        href: '/libs/swiper/swiper.min.css'
+      },
+      {
+        rel: 'stylesheet',
+        href: '/libs/swiper/font.css'
+      }
+    ]
   }
 }
 </script>
@@ -274,6 +291,7 @@ export default {
             padding: 1.7rem;
             background-color: #fff;
             text-align: center;
+            min-height: 220px;
             .title {
               margin-bottom: 1.2rem;
               font-size: 1.7rem;
@@ -281,6 +299,7 @@ export default {
             .desc {
               font-size: 1.1rem;
               color: #5d5f64;
+              line-height: 1.6;
             }
           }
         }
@@ -288,6 +307,9 @@ export default {
           li {
             width: 100%;
             padding: 0;
+            .box {
+              min-height: auto;
+            }
           }
         }
       }
@@ -300,6 +322,8 @@ export default {
     .inner {
       text-align: center;
       color: #fff;
+      max-width: $contentWidth;
+      margin: 0 auto;
       .titlebox {
         margin-bottom: 5rem;
         .title {
@@ -320,12 +344,14 @@ export default {
           .box {
             padding: 1.7rem;
             background-color: #071b50;
+            min-height: 240px;
             .title {
               margin-bottom: 1.2rem;
               font-size: 1.7rem;
             }
             .desc {
               font-size: 1.1rem;
+              line-height: 1.6;
             }
           }
         }
@@ -333,6 +359,9 @@ export default {
           li {
             width: 100%;
             padding: 0;
+            .box {
+              min-height: auto;
+            }
           }
         }
       }
