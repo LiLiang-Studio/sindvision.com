@@ -47,14 +47,40 @@
             </div>
           </div>
         </div>
-        <ul class="list">
-          <li>
-            <h3 class="title">
-              功能全面
-            </h3>
-            <p class="desc">
-              多功能模块，近百种细分项目完全满足系统的需求。
-            </p>
+        <ul class="clearfix list">
+          <li v-for="_ in row4Data" :key="_.title">
+            <div class="box">
+              <h3 class="title">
+                {{ _.title }}
+              </h3>
+              <p class="desc">
+                {{ _.desc }}
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row-5">
+      <div class="inner">
+        <div class="titlebox">
+          <h3 class="title">
+            品牌优势
+          </h3>
+          <h4 class="subtitle">
+            Our service features
+          </h4>
+        </div>
+        <ul class="clearfix list">
+          <li v-for="_ in row5Data" :key="_.title">
+            <div class="box">
+              <h3 class="title">
+                {{ _.title }}
+              </h3>
+              <p class="desc">
+                {{ _.desc }}
+              </p>
+            </div>
           </li>
         </ul>
       </div>
@@ -97,8 +123,42 @@ export default {
       ],
       row4Data: [
         {
-          title: '',
-          desc: ''
+          title: '功能全面',
+          desc: '多功能模块，近百种细分项目完全满足系统的需求。'
+        },
+        {
+          title: '多重可视化',
+          desc: '通过饼图、柱状图等形式直观呈现，数据可视化呈现。'
+        },
+        {
+          title: '个性定制',
+          desc: '可根据需求对统计报表呈现方式定制，按需呈现。'
+        },
+        {
+          title: '一键下载',
+          desc: '分析报告下载，一键导出便于分析存档。'
+        },
+        {
+          title: '全局监控',
+          desc: '直观便捷地对全局状态进行监控，把我进度和状态。'
+        }
+      ],
+      row5Data: [
+        {
+          title: '平台稳定',
+          desc: '凭借丰富的经验和领先的精湛技术，保证用户系统网络平稳、健康地运行'
+        },
+        {
+          title: '全天候服务',
+          desc: '24×7全天候服务，为您第一时间提供咨询、解决问题。'
+        },
+        {
+          title: '成本控制',
+          desc: '机器人在线服务，依据客户问题针对性解决。无需客服长时间在线。'
+        },
+        {
+          title: '安全保障',
+          desc: '业内标准质量的全国范围的技术支持服务。 成熟的服务工程升级管理，故障级别定义广泛。'
         }
       ]
     }
@@ -178,14 +238,14 @@ export default {
   }
   .row-4 {
     padding: 5rem $contentPadding 3rem;
-    background: url('/images/page_title6-1.jpg') no-repeat center center;
+    background: url('/images/page_title6-1.jpg') no-repeat;
     background-size: cover;
     .inner {
       max-width: $contentWidth;
       margin: 0 auto;
       .summary {
         max-width: 660px;
-        margin: 0 auto 4rem;
+        margin: 0 auto 3rem;
         color: #fff;
         text-align: center;
         .title {
@@ -200,6 +260,79 @@ export default {
           }
           .rightItem {
             float: right;
+          }
+        }
+      }
+      .list {
+        list-style: none;
+        li {
+          width: 20%;
+          padding: 0 .5rem;
+          margin-bottom: $contentPadding;
+          float: left;
+          .box {
+            padding: 1.7rem;
+            background-color: #fff;
+            text-align: center;
+            .title {
+              margin-bottom: 1.2rem;
+              font-size: 1.7rem;
+            }
+            .desc {
+              font-size: 1.1rem;
+              color: #5d5f64;
+            }
+          }
+        }
+        @media screen and (max-width: 800px) {
+          li {
+            width: 100%;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+  .row-5 {
+    padding: 6.2rem $contentPadding 4.6rem;
+    background: #051643 url('/images/pattern_background.png') no-repeat;
+    background-size: cover;
+    .inner {
+      text-align: center;
+      color: #fff;
+      .titlebox {
+        margin-bottom: 5rem;
+        .title {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+        .subtitle {
+          font-size: 1.3rem;
+        }
+      }
+      .list {
+        list-style: none;
+        li {
+          width: 25%;
+          padding: 0 .5rem;
+          margin-bottom: $contentPadding;
+          float: left;
+          .box {
+            padding: 1.7rem;
+            background-color: #071b50;
+            .title {
+              margin-bottom: 1.2rem;
+              font-size: 1.7rem;
+            }
+            .desc {
+              font-size: 1.1rem;
+            }
+          }
+        }
+        @media screen and (max-width: 800px) {
+          li {
+            width: 100%;
+            padding: 0;
           }
         }
       }
