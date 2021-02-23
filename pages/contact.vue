@@ -36,39 +36,85 @@
           <ul class="form">
             <li>
               <label>您的名字 (必填)</label>
-              <input type="text">
+              <input v-model="form.name" type="text" maxlength="20">
             </li>
             <li>
               <label>您的邮箱 (必填)</label>
-              <input type="text">
+              <input v-model="form.email" type="text" maxlength="50">
             </li>
             <li>
               <label>主题 (必填)</label>
-              <input type="text">
+              <input v-model="form.topic" type="text" maxlength="50">
             </li>
             <li>
               <label>您的留言 (必填)</label>
-              <textarea rows="6" />
+              <textarea v-model="form.content" rows="6" maxlength="300" />
             </li>
             <li>
-              <button class="btn">
+              <button class="btn" @click="submit">
                 发送
               </button>
             </li>
           </ul>
         </div>
       </div>
+      <div v-if="loading" class="spinbox">
+        <i class="fa fa-spinner fa-pulse fa-2x" />
+      </div>
     </div>
   </ui-main>
 </template>
 
 <script>
+import { stringify } from 'qs'
 import UiMain from '@/components/Main.vue'
 export default {
   components: { UiMain },
   data () {
     return {
-      title: '商务合作'
+      title: '商务合作',
+      form: {},
+      loading: false
+    }
+  },
+  methods: {
+    submit () {
+      const trim = value => (value || '').trim()
+      const emailReg = /^[A-Za-z0-9\u4E00-\u9FA5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
+      const form = {
+        name: trim(this.form.name),
+        email: trim(this.form.email),
+        topic: trim(this.form.topic),
+        content: trim(this.form.content)
+      }
+      let msg
+      if (!form.name) {
+        msg = '请输入您的名字'
+      } else if (!form.email) {
+        msg = '请输入您的邮箱'
+      } else if (!emailReg.test(form.email)) {
+        msg = '邮箱格式不正确'
+      } else if (!form.topic) {
+        msg = '请输入主题'
+      } else if (!form.content) {
+        msg = '请输入您的留言'
+      }
+      if (msg) {
+        return window.alert(msg)
+      }
+      this.loading = true
+      this.$axios.post('/ccas/portal/leave/message/save', stringify(form)).then(({ data }) => {
+        if (data.ok) {
+          window.alert('提交成功')
+          this.form = {}
+        } else {
+          window.alert(data.info)
+        }
+      }).catch((e) => {
+        window.alert(e.message)
+      }).finally(() => {
+        this.loading = false
+      })
     }
   }
 }
@@ -141,6 +187,19 @@ export default {
         }
       }
     }
+  }
+  .spinbox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, .7);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>

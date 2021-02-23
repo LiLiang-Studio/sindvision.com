@@ -1,3 +1,5 @@
+const isProd = process.env.NODE_ENV !== 'development'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -61,5 +63,9 @@ export default {
   },
   server: {
     host: '0.0.0.0'
+  },
+  // eslint-disable-next-line no-dupe-keys
+  axios: {
+    baseURL: isProd ? 'http://103.36.193.81:8002' : 'http://123.57.89.226:8002'
   }
 }
