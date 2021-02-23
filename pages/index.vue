@@ -217,10 +217,6 @@ export default {
       {
         rel: 'stylesheet',
         href: '/libs/swiper/swiper.min.css'
-      },
-      {
-        rel: 'stylesheet',
-        href: '/libs/swiper/font.css'
       }
     ]
   }
