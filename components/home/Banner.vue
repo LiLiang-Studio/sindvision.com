@@ -24,7 +24,7 @@
               NGN技术架构 智能IVR<br>
               可拓展性配置 打造您的专属定制体验
             </p>
-            <a href="#" class="btn">立即体验</a>
+            <a target="_blank" href="http://103.36.193.81:8002/ccas-ui/" class="btn">立即体验</a>
           </div>
         </div>
       </div>
@@ -56,7 +56,9 @@ export default {
       speed: 1000,
       longSwipes: false,
       loop: true,
-      autoplay: false,
+      autoplay: {
+        disableOnInteraction: false
+      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'

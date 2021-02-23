@@ -1,7 +1,7 @@
 <template>
   <header class="clearfix ui-header">
     <nav class="nav">
-      <a href="/" class="logo">
+      <a href="/" class="logo" title="首页">
         <img src="/images/白色-拷贝@2x.png" alt="">
       </a>
       <ul class="menu">
