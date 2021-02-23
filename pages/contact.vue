@@ -14,15 +14,15 @@
               <b>北京</b>
             </dt>
             <dd>
-              地址 北京市海淀区志新路15号三层311 <br>
-              邮箱 support@sindvision.com <br><br>
+              <i class="fa fa-map-marker fa-fw" /> 北京市海淀区志新路15号三层311 <br>
+              <i class="fa fa-envelope fa-fw" /> support@sindvision.com <br><br>
             </dd>
             <dt>
               <b>郑州</b>
             </dt>
             <dd>
-              地址 郑州市高新区科学大道升龙又一城A座10楼93号 <br>
-              邮箱 support@sindvision.com
+              <i class="fa fa-map-marker fa-fw" /> 郑州市高新区科学大道升龙又一城A座10楼93号 <br>
+              <i class="fa fa-envelope fa-fw" /> support@sindvision.com
             </dd>
           </dl>
         </div>

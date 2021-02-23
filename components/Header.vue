@@ -6,7 +6,10 @@
       </a>
       <ul class="menu">
         <li>
-          <a href="javascript:;">产品功能 &or;</a>
+          <a href="javascript:;">
+            产品功能
+            <i class="fa fa-angle-down" />
+          </a>
           <ul class="submenu">
             <li v-for="_ in features" :key="_.title">
               <nuxt-link :to="`/product_features/${_.title}`">
@@ -69,7 +72,7 @@ export default {
 <style lang="scss">
 .ui-header {
   padding: 0 $contentPadding;
-  background-color: rgba(10, 10, 10, .5);
+  background-color: rgba(10, 10, 10, .85);
   position: fixed;
   top: 0;
   left: 0;
