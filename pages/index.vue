@@ -1,7 +1,7 @@
 /* eslint-disable vue/no-v-html */
 <template>
   <div class="page-index">
-    <ui-banner />
+    <HomeBanner />
     <div class="row-1">
       <div class="inner">
         <h3 class="title">
@@ -106,15 +106,12 @@
         </ul>
       </div>
     </div>
-    <ui-advisory-card />
+    <AdvisoryCard />
   </div>
 </template>
 
 <script>
-import UiBanner from '@/components/home/Banner.vue'
-import UiAdvisoryCard from '@/components/AdvisoryCard.vue'
 export default {
-  components: { UiBanner, UiAdvisoryCard },
   data () {
     return {
       row2Data: [

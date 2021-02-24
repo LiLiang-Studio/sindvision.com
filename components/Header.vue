@@ -5,47 +5,22 @@
         <img src="/images/白色-拷贝@2x.png" alt="">
       </a>
       <ul class="menu">
-        <li>
-          <a href="javascript:;">
-            产品功能
-            <i class="fa fa-angle-down" />
-          </a>
-          <ul class="submenu">
-            <li v-for="_ in features" :key="_.title">
-              <nuxt-link :to="`/product_features/${_.title}`">
-                {{ _.title }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <nuxt-link to="/cases">
-            案例
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/appliances">
-            应用场景
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/services">
-            培训服务
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/help">
-            帮助中心
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/contact">
-            商业合作
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/about_us">
-            关于我们
+        <li v-for="_ in items" :key="_.title">
+          <template v-if="_.children">
+            <a href="javascript:;">
+              {{ _.title }}
+              <i class="fa fa-angle-down" />
+            </a>
+            <ul class="submenu">
+              <li v-for="item in _.children" :key="item.title">
+                <nuxt-link :to="item.to">
+                  {{ item.title }}
+                </nuxt-link>
+              </li>
+            </ul>
+          </template>
+          <nuxt-link v-else :to="_.to">
+            {{ _.title }}
           </nuxt-link>
         </li>
         <li>
@@ -63,7 +38,18 @@ import features from '@/assets/data'
 export default {
   data () {
     return {
-      features
+      items: [
+        {
+          title: '产品功能',
+          children: features.map(_ => ({ ..._, to: `/product_features/${_.title}` }))
+        },
+        { title: '案例', to: '/cases' },
+        { title: '应用场景', to: '/appliances' },
+        { title: '培训服务', to: '/services' },
+        { title: '帮助中心', to: '/help' },
+        { title: '商业合作', to: '/contact' },
+        { title: '关于我们', to: '/about_us' }
+      ]
     }
   }
 }
@@ -110,7 +96,7 @@ export default {
         color: #fff;
         transition: all .2s;
         &:hover, &.nuxt-link-active {
-          color: #e9a825;
+          color: $themeColor;
         }
       }
       &:hover {
@@ -126,7 +112,7 @@ export default {
   }
   .button {
     @include gradBtn;
-    padding: .4rem 1.25rem;
+    padding: .4rem 1rem;
     font-size: 12px;
   }
   .submenu {
@@ -142,7 +128,7 @@ export default {
       padding: 0 1.25rem;
       line-height: 2.6rem;
       &:hover, &.nuxt-link-active {
-        background-color: #f7f8f9;
+        background-color: $bgColor;
       }
     }
   }

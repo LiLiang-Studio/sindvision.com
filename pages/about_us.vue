@@ -16,15 +16,13 @@
           </p>
         </div>
       </Box>
-      <ui-advisory-card />
+      <AdvisoryCard />
     </div>
   </Main>
 </template>
 
 <script>
-import UiAdvisoryCard from '@/components/AdvisoryCard.vue'
 export default {
-  components: { UiAdvisoryCard },
   data () {
     return { title: '关于我们' }
   }
