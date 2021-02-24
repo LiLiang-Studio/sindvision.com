@@ -1,21 +1,17 @@
 <template>
   <ui-main :banner="{ src: '/images/page_title4.jpg', title }">
     <div class="page-appliances">
-      <ul>
-        <li v-for="_ in data" :key="_.title" :class="_.className">
-          <div class="inner">
-            <div class="box">
-              <h3 class="title">
-                {{ _.title }}
-              </h3>
-              <p class="desc">
-                {{ _.desc }}
-              </p>
-            </div>
-            <img :src="_.imgSrc" alt="">
-          </div>
-        </li>
-      </ul>
+      <ui-box v-for="_ in data" :key="_.title" :class="_.className">
+        <div class="box">
+          <h3 class="title">
+            {{ _.title }}
+          </h3>
+          <p class="desc">
+            {{ _.desc }}
+          </p>
+        </div>
+        <img :src="_.imgSrc" alt="">
+      </ui-box>
     </div>
   </ui-main>
 </template>
@@ -61,56 +57,50 @@ export default {
 
 <style lang="scss">
 .page-appliances {
-  background-color: #f7f8f9;
-  li {
-    list-style: none;
-    padding: 3rem $contentPadding;
+  background-color: $bgColor;
+  .ui-box {
     &.bg-white {
       background-color: #fff;
     }
-    .box {
-      padding: 1rem 0;
-      margin-right: 9%;
+    &_inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    &:nth-child(2n) {
-      .box {
-        order: 1;
-        margin-right: 0;
-        margin-left: 9%;
-      }
+    &:nth-child(2n) img {
+      order: -1;
     }
     @media screen and (max-width: 800px) {
-      .inner {
+      &_inner {
         display: block;
-        img {
-          width: auto;
-          max-width: 100%;
-        }
-        .box {
-          margin: 0;
-          width: 100%;
-        }
+      }
+      img {
+        width: auto;
+        max-width: 70%;
+        margin: 0;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .box {
+        width: 100%;
       }
     }
   }
-  .inner {
-    max-width: $contentWidth;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    > * {
-      flex: 1;
-      width: 0;
-    }
+  img, .box {
+    width: 46%;
+  }
+  .box {
+    padding: 1rem 0;
   }
   .title {
     font-size: 2rem;
-    color: #202020;
-    margin-bottom: 35px;
+    color: $titleColor;
+    margin-bottom: 2rem;
   }
   .desc {
     font-size: 1.3rem;
-    color: #5d5f64;
+    color: $textColor;
     line-height: 1.6;
   }
 }

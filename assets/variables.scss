@@ -2,6 +2,9 @@ $contentWidth: 1200px;
 $contentPadding: 1rem;
 $titleColor: #303133;
 $textColor: #606266;
+$bgColor: #f7f8f9;
+$themeColor: #e9a825;
+
 @mixin gradBtn {
   display: inline-block;
   border-radius: 2rem;

@@ -1,10 +1,12 @@
 import Vue from 'vue'
-import UiMain from '@/components/Main.vue'
+import Box from '@/components/Box.vue'
+import Main from '@/components/Main.vue'
 
 const comps = {
-  UiMain
+  Box,
+  Main
 }
 
 Object.keys(comps).forEach((name) => {
-  Vue.component(name, comps[name])
+  Vue.component(`Ui${name}`, comps[name])
 })
