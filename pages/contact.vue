@@ -67,9 +67,7 @@
 
 <script>
 import { stringify } from 'qs'
-import UiMain from '@/components/Main.vue'
 export default {
-  components: { UiMain },
   data () {
     return {
       title: '商务合作',

@@ -21,9 +21,7 @@
 </template>
 
 <script>
-import UiMain from '@/components/Main.vue'
 export default {
-  components: { UiMain },
   data () {
     return {
       title: '应用场景',

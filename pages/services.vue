@@ -5,9 +5,7 @@
 </template>
 
 <script>
-import UiMain from '@/components/Main.vue'
 export default {
-  components: { UiMain },
   data () {
     return {
       title: '培训服务'

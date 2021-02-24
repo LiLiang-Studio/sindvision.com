@@ -8,9 +8,7 @@
 </template>
 
 <script>
-import UiMain from '@/components/Main.vue'
 export default {
-  components: { UiMain },
   layout: 'error',
   props: {
     error: {

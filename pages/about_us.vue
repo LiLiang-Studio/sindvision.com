@@ -24,10 +24,9 @@
 </template>
 
 <script>
-import UiMain from '@/components/Main.vue'
 import UiAdvisoryCard from '@/components/AdvisoryCard.vue'
 export default {
-  components: { UiMain, UiAdvisoryCard },
+  components: { UiAdvisoryCard },
   data () {
     return {
       title: '关于我们'

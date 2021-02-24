@@ -9,9 +9,7 @@
 
 <script>
 import features from '@/assets/data'
-import UiMain from '@/components/Main.vue'
 export default {
-  components: { UiMain },
   asyncData ({ params }) {
     const item = features.find(_ => params.id === _.title)
     return item ? { title: item.title, content: item.desc } : {}
