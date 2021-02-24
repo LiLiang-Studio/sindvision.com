@@ -1,10 +1,10 @@
 /* eslint-disable vue/no-v-html */
 <template>
-  <ui-main :banner="{ src: '/images/pattern_bg.jpg', title }">
-    <div class="page-product_features">
-      <div class="inner" v-html="content" />
-    </div>
-  </ui-main>
+  <Main class="page-product_features" :banner="{ src: '/images/pattern_bg.jpg', title }">
+    <Box>
+      <div v-html="content" />
+    </Box>
+  </Main>
 </template>
 
 <script>
@@ -19,41 +19,36 @@ export default {
 
 <style lang="scss">
 .page-product_features {
-  padding: 3.5rem $contentPadding;
-  .inner {
-    max-width: 1260px;
+  color: $textColor;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  .article {
+    max-width: 800px;
     margin: 0 auto;
-    color: #5d5f64;
-    line-height: 1.6;
-    font-size: 1.1rem;
-    .article {
-      max-width: 800px;
-      margin: 0 auto;
-      ul {
-        padding-left: 2em;
-        li {
-          margin-bottom: .5em;
-        }
+    ul {
+      padding-left: 2em;
+      li {
+        margin-bottom: .5em;
       }
     }
-    .rowBox {
-      list-style: none;
-      text-align: center;
+  }
+  .rowBox {
+    list-style: none;
+    text-align: center;
+    li {
+      float: left;
+      padding: 15px;
+      width: 20%;
+    }
+    @media screen and (max-width: 800px) {
       li {
-        float: left;
-        padding: 15px;
-        width: 20%;
+        width: 100%;
       }
-      @media screen and (max-width: 800px) {
-        li {
-          width: 100%;
-        }
-      }
-      h3 {
-        font-size: 1.7rem;
-        color: #202020;
-        margin-bottom: 10px;
-      }
+    }
+    h3 {
+      font-size: 1.6rem;
+      color: $titleColor;
+      margin-bottom: 10px;
     }
   }
 }

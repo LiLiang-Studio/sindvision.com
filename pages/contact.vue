@@ -1,68 +1,61 @@
 <template>
-  <ui-main :banner="{ src: '/images/banner-1.jpg', title, subTitle: '携手现在，定义未来！' }">
-    <div class="page-contact">
-      <div class="clearfix inner">
-        <div class="leftbox">
-          <h3 class="title">
-            保持联系
-          </h3>
-          <p class="desc">
-            我们热切期待您的来访与咨询。
-          </p>
-          <dl>
+  <Main class="page-contact" :banner="{ src: '/images/banner-1.jpg', title, subTitle: '携手现在，定义未来！' }">
+    <Box>
+      <div class="leftbox">
+        <h3 class="title">
+          保持联系
+        </h3>
+        <p class="desc">
+          我们热切期待您的来访与咨询。
+        </p>
+        <dl>
+          <div v-for="_ in addressData" :key="_.address">
             <dt>
-              <b>北京</b>
+              <b>{{ _.city }}</b>
             </dt>
             <dd>
-              <i class="fa fa-map-marker fa-fw" /> 北京市海淀区志新路15号三层311 <br>
+              <i class="fa fa-map-marker fa-fw" /> {{ _.address }} <br>
               <i class="fa fa-envelope fa-fw" /> support@sindvision.com <br><br>
             </dd>
-            <dt>
-              <b>郑州</b>
-            </dt>
-            <dd>
-              <i class="fa fa-map-marker fa-fw" /> 郑州市高新区科学大道升龙又一城A座10楼93号 <br>
-              <i class="fa fa-envelope fa-fw" /> support@sindvision.com
-            </dd>
-          </dl>
-        </div>
-        <div>
-          <h3 class="title">
-            需要帮助？
-          </h3>
-          <p class="desc">
-            请填写如下表单快速与我们联系，我们将尽快回复您。
-          </p>
-          <ul class="form">
-            <li>
-              <label>您的名字 (必填)</label>
-              <input v-model="form.name" type="text" maxlength="20">
-            </li>
-            <li>
-              <label>您的邮箱 (必填)</label>
-              <input v-model="form.email" type="text" maxlength="50">
-            </li>
-            <li>
-              <label>主题 (必填)</label>
-              <input v-model="form.topic" type="text" maxlength="50">
-            </li>
-            <li>
-              <label>您的留言 (必填)</label>
-              <textarea v-model="form.content" rows="6" maxlength="300" />
-            </li>
-            <li>
-              <button class="btn" @click="submit">
-                发送
-              </button>
-            </li>
-          </ul>
-        </div>
+          </div>
+        </dl>
       </div>
-      <div v-if="loading" class="spinbox">
-        <i class="fa fa-spinner fa-pulse fa-2x" />
+      <div>
+        <h3 class="title">
+          需要帮助？
+        </h3>
+        <p class="desc">
+          请填写如下表单快速与我们联系，我们将尽快回复您。
+        </p>
+        <ul class="form">
+          <li>
+            <label>您的名字 (必填)</label>
+            <input v-model="form.name" type="text" maxlength="20">
+          </li>
+          <li>
+            <label>您的邮箱 (必填)</label>
+            <input v-model="form.email" type="text" maxlength="50">
+          </li>
+          <li>
+            <label>主题 (必填)</label>
+            <input v-model="form.topic" type="text" maxlength="50">
+          </li>
+          <li>
+            <label>您的留言 (必填)</label>
+            <textarea v-model="form.content" rows="6" maxlength="300" />
+          </li>
+          <li>
+            <button class="btn" @click="submit">
+              发送
+            </button>
+          </li>
+        </ul>
       </div>
+    </Box>
+    <div v-if="loading" class="spinbox">
+      <i class="fa fa-spinner fa-pulse fa-2x" />
     </div>
-  </ui-main>
+  </Main>
 </template>
 
 <script>
@@ -72,7 +65,17 @@ export default {
     return {
       title: '商务合作',
       form: {},
-      loading: false
+      loading: false,
+      addressData: [
+        {
+          city: '北京',
+          address: '北京市海淀区志新路15号三层311'
+        },
+        {
+          city: '郑州',
+          address: '郑州市高新区科学大道升龙又一城A座10楼93号'
+        }
+      ]
     }
   },
   methods: {
@@ -120,69 +123,65 @@ export default {
 
 <style lang="scss">
 .page-contact {
-  padding: 3.5rem $contentPadding;
-  .inner {
-    max-width: $contentWidth;
-    margin: 0 auto;
+  .ui-box_inner {
+    display: flex;
+    justify-content: space-between;
     > div {
-      float: left;
-      width: 50%;
+      width: 46%;
       padding: 1rem 0;
     }
-    .leftbox {
-      padding-right: 1rem;
-    }
     @media screen and (max-width: 600px) {
+      display: block;
       > div {
         width: 100%;
       }
     }
-    .title {
-      font-size: 2.3rem;
-      color: #202020;
-      margin-bottom: 1.3rem;
-    }
-    .desc {
-      font-size: 1.1rem;
-      color: #5d5f64;
+  }
+  .title {
+    font-size: 2.3rem;
+    color: $titleColor;
+    margin-bottom: 1.3rem;
+  }
+  .desc {
+    font-size: 1.1rem;
+    color: $textColor;
+    margin-bottom: 1rem;
+  }
+  dt {
+    font-size: 1.1rem;
+    color: $titleColor;
+    margin-bottom: .5rem;
+  }
+  dd {
+    font-size: 1rem;
+    color: $textColor;
+    line-height: 1.6;
+  }
+  .form {
+    list-style: none;
+    li {
       margin-bottom: 1rem;
-    }
-    dt {
-      font-size: 1.1rem;
-      color: #202020;
-      margin-bottom: .5rem;
-    }
-    dd {
-      font-size: 1rem;
-      color: #5d5f64;
-      line-height: 1.6;
-    }
-    .form {
-      list-style: none;
-      li {
-        margin-bottom: 1rem;
-        label {
-          display: block;
-          font-size: 1.1rem;
-          color: #5d5f64;
-          margin-bottom: 5px;
-        }
-        input, textarea {
-          width: 100%;
-          padding: 8px 15px;
-          border: 1px solid #e8eaf0;
-        }
-        input {
-          height: 48px;
-        }
-        .btn {
-          @include gradBtn;
-          border: none;
-          padding: 13px 29px;
-          cursor: pointer;
-          font-weight: bold;
-          outline: none;
-        }
+      label {
+        display: block;
+        font-size: 1.1rem;
+        color: $textColor;
+        margin-bottom: 5px;
+      }
+      input, textarea {
+        width: 100%;
+        padding: 8px 15px;
+        border: 1px solid $borderColor;
+      }
+      input {
+        height: 48px;
+      }
+      .btn {
+        @include gradBtn;
+        border: none;
+        padding: 13px 29px;
+        cursor: pointer;
+        font-weight: bold;
+        outline: none;
       }
     }
   }

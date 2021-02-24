@@ -1,5 +1,5 @@
 <template>
-  <ui-main
+  <Main
     :banner="{
       src: '/images/pattern_bg.jpg',
       title: `${error.statusCode} ${error.statusCode === 404 ? '未找到页面' : '发生未知错误'}`

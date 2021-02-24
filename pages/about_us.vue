@@ -1,7 +1,7 @@
 <template>
-  <ui-main :banner="{ src: '/images/page_title6.jpg', title, subTitle: 'Who we are' }">
+  <Main :banner="{ src: '/images/page_title6.jpg', title, subTitle: 'Who we are' }">
     <div class="page-about">
-      <ui-box>
+      <Box>
         <div class="col">
           <img src="/images/who-we-are-intro.jpg" alt="">
         </div>
@@ -15,10 +15,10 @@
             公司技术带头人拥有20年的呼叫平台、JAVA架构开发经验， 人员分布于北京、上海、广州、郑州、潍坊 等地。
           </p>
         </div>
-      </ui-box>
+      </Box>
       <ui-advisory-card />
     </div>
-  </ui-main>
+  </Main>
 </template>
 
 <script>

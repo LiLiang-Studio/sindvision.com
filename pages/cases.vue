@@ -1,29 +1,27 @@
 <template>
-  <ui-main :banner="{ src: '/images/page_title5.jpg', title }">
-    <div class="page-cases">
-      <div class="inner">
-        <ul class="tabs">
-          <li v-for="_ in tabs" :key="_.label" :class="{active: _.label === activeTab}" @click="onTabClick(_)">
-            <span class="label">
-              {{ _.label }}
-            </span>
-          </li>
-        </ul>
-        <div v-for="_ in tabs" :key="_.label">
-          <template v-if="_.label === activeTab">
-            <div v-for="item in _.data" :key="item.title" class="content">
-              <img class="logo" :src="item.logoSrc" alt="">
-              <p class="desc">
-                {{ item.title }} <br><br>
-                使用产品：远景智能外呼系统 <br><br>
-                {{ item.desc }}
-              </p>
-            </div>
-          </template>
-        </div>
+  <Main class="page-cases" :banner="{ src: '/images/page_title5.jpg', title }">
+    <Box>
+      <ul class="tabs">
+        <li v-for="_ in tabs" :key="_.label" :class="{active: _.label === activeTab}" @click="onTabClick(_)">
+          <span class="label">
+            {{ _.label }}
+          </span>
+        </li>
+      </ul>
+      <div v-for="_ in tabs" :key="_.label">
+        <template v-if="_.label === activeTab">
+          <div v-for="item in _.data" :key="item.title" class="content">
+            <img class="logo" :src="item.logoSrc" alt="">
+            <p class="desc">
+              {{ item.title }} <br><br>
+              使用产品：远景智能外呼系统 <br><br>
+              {{ item.desc }}
+            </p>
+          </div>
+        </template>
       </div>
-    </div>
-  </ui-main>
+    </Box>
+  </Main>
 </template>
 
 <script>
@@ -120,32 +118,29 @@ export default {
 
 <style lang="scss">
 .page-cases {
-  padding: 3.5rem $contentPadding 7.5rem;
-  .inner {
-    max-width: $contentWidth;
-    margin: 0 auto;
-    border: 1px solid #e8eaf0;
+  .ui-box_inner {
+    border: 1px solid $borderColor;
   }
   .tabs {
-    list-style: none;
     display: flex;
+    list-style: none;
     li {
       flex: 1;
       font-size: 1.5rem;
-      color: #202020;
+      color: $titleColor;
       font-weight: bold;
       padding: .7rem 0;
-      background-color: #f7f8f9;
+      background-color: $bgColor;
       cursor: pointer;
       transition: all .2s;
       text-align: center;
-      border-top: 3px solid #f7f8f9;
+      border-top: 3px solid $bgColor;
       &:hover {
         border-color: #fff;
         background-color: #fff;
       }
       &.active {
-        border-color: #e9a825;
+        border-color: $themeColor;
         background-color: #fff;
       }
     }
@@ -158,7 +153,7 @@ export default {
     }
     .desc {
       font-size: 1.1rem;
-      color: #5d5f64;
+      color: $textColor;
       line-height: 1.6;
     }
   }

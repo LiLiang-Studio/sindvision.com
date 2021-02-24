@@ -1,7 +1,7 @@
 <template>
-  <ui-main :banner="{ src: '/images/page_title4.jpg', title }">
+  <Main :banner="{ src: '/images/page_title4.jpg', title }">
     <div class="page-appliances">
-      <ui-box v-for="_ in data" :key="_.title" :class="_.className">
+      <Box v-for="_ in data" :key="_.title" :class="_.className">
         <div class="box">
           <h3 class="title">
             {{ _.title }}
@@ -11,9 +11,9 @@
           </p>
         </div>
         <img :src="_.imgSrc" alt="">
-      </ui-box>
+      </Box>
     </div>
-  </ui-main>
+  </Main>
 </template>
 
 <script>
