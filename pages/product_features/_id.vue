@@ -10,9 +10,9 @@
 <script>
 import features from '@/assets/data'
 export default {
-  asyncData ({ params }) {
-    const item = features.find(_ => params.id === _.title)
-    return item ? { title: item.title, content: item.desc } : {}
+  data () {
+    const item = features.find(_ => this.$route.params.id === _.title)
+    return item ? { title: item.title, content: item.desc } : { title: '', content: '' }
   }
 }
 </script>
