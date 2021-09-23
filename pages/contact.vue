@@ -69,11 +69,11 @@ export default {
       addressData: [
         {
           city: '北京',
-          address: '北京市海淀区志新路15号三层311'
+          address: '北京市海淀区上地十街1号院5号楼13层1306'
         },
         {
           city: '郑州',
-          address: '郑州市高新区科学大道升龙又一城A座10楼93号'
+          address: '郑州市高新区科学大道升龙又一城A座7楼44号'
         }
       ]
     }
