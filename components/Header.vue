@@ -45,8 +45,8 @@ export default {
         },
         { title: '案例', to: '/cases' },
         { title: '应用场景', to: '/appliances' },
-        { title: '培训服务', to: '/services' },
-        { title: '帮助中心', to: '/help' },
+        // { title: '培训服务', to: '/services' },
+        // { title: '帮助中心', to: '/help' },
         { title: '商业合作', to: '/contact' },
         { title: '关于我们', to: '/about_us' }
       ]
