@@ -2,7 +2,7 @@
   <footer class="ui-footer">
     <img height="41" src="/images/彩色-拷贝@2x.png" alt="">
     <p class="info">
-      <span>北京盛德远景科技有限公司 © Copyright 2017 - 2021</span>
+      <span>北京盛德远景科技有限公司 © Copyright 2017 - {{ year }}</span>
       <span class="divider">|</span>
       <a target="_blank" href="https://beian.miit.gov.cn/">京ICP备18057595号-1</a>
       <span class="divider">|</span>
@@ -10,6 +10,16 @@
     </p>
   </footer>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      year: new Date().getFullYear()
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 .ui-footer {
