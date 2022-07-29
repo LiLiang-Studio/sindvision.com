@@ -1,12 +1,12 @@
 <template>
   <footer class="ui-footer">
-    <img height="41" src="/images/彩色-拷贝@2x.png" alt="">
+    <img height="41" src="/images/logo_cai@2xpng" alt="">
     <p class="info">
       <span>北京盛德远景科技有限公司 © Copyright 2017 - {{ year }}</span>
       <span class="divider">|</span>
       <a target="_blank" href="https://beian.miit.gov.cn/">京ICP备18057595号-1</a>
       <span class="divider">|</span>
-      <a target="_blank" href="/images/增值电信营业许可证.png">增值电信业务许可证 B2-20184754</a>
+      <a target="_blank" href="/images/license.png">增值电信业务许可证 B2-20184754</a>
     </p>
   </footer>
 </template>
